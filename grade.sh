@@ -23,6 +23,8 @@ javac -cp $CPATH ./tests/*.java
 if [ $? -ne 0 ]; then
     echo "Error: Compilation failed"
     exit 1
+else 
+    echo "Compilation Done!"
 fi
 
 # Run the tests using JUnit and report the grade
