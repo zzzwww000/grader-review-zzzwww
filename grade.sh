@@ -1,4 +1,4 @@
-CPATH='.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'
+CPATH='.;../lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'
 
 # clone the repository of the student submission
 rm -rf submissions
@@ -16,6 +16,7 @@ mkdir ./tests
 cp ./submissions/ListExamples.java ./tests
 cp ./TestListExamples.java ./tests
 
+cd tests
 # Compile the student's code and test files
 javac -cp $CPATH ./tests/*.java
 
@@ -29,7 +30,7 @@ fi
 
 # Run the tests using JUnit and report the grade
 cd ./tests
-java -cp ../:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar org.junit.runner.JUnitCore TestListExamples | grep . > tests_results.txt
+java -cp $CPATH org.junit.runner.JUnitCore TestListExamples | grep . > tests_results.txt
 if [ $? -eq 0 ]; then
     echo "Congratulations, you passed the tests!"
     cat tests_results.txt
