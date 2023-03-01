@@ -31,11 +31,11 @@ fi
 # Run the tests using JUnit and report the grade
 
 java -cp $CPATH org.junit.runner.JUnitCore TestListExamples | grep . > tests_results.txt
-if [ $? -eq 0 ]; then
-    echo "Congratulations, you passed the tests!"
+if [ -s tests_results.txt ]; then
+    echo "Sorry, you failed the tests."
     cat tests_results.txt
 else
-    echo "Sorry, you failed the tests."
+    echo "Congrats, well done!"
     cat tests_results.txt
 fi
 
