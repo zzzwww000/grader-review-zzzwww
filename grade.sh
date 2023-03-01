@@ -17,8 +17,7 @@ cp ./submissions/ListExamples.java ./tests
 cp ./TestListExamples.java ./tests
 
 # Compile the student's code and test files
-cd ./tests
-javac -cp $CPATH *.java
+javac -cp $CPATH ./tests*.java
 
 # Check if compilation succeeded
 if [ $? -ne 0 ]; then
@@ -27,7 +26,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Run the tests using JUnit and report the grade
-java -cp $CPATH org.junit.runner.JUnitCore TestListExamples | grep -E > tests_results.txt
+java -cp $CPATH org.junit.runner.JUnitCore ./tests/TestListExamples | grep -E > tests_results.txt
 if [ $? -eq 0 ]; then
     echo "Congratulations, you passed the tests!"
 else
