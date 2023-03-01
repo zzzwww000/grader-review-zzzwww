@@ -28,7 +28,7 @@ else
 fi
 
 # Run the tests using JUnit and report the grade
-java -cp $CPATH org.junit.runner.JUnitCore ./tests/TestListExamples | grep . > tests_results.txt
+java -cp $CPATH org.junit.runner.JUnitCore ./tests TestListExamples | grep . > tests_results.txt
 if [ $? -eq 0 ]; then
     echo "Congratulations, you passed the tests!"
     cat tests_results.txt
