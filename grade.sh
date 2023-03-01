@@ -29,8 +29,10 @@ fi
 java -cp $CPATH org.junit.runner.JUnitCore ./tests/TestListExamples | grep . > tests_results.txt
 if [ $? -eq 0 ]; then
     echo "Congratulations, you passed the tests!"
+    cat tests_results.txt
 else
     echo "Sorry, you failed the tests."
+    cat tests_results.txt
 fi
 
 exit 0
