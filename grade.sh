@@ -18,7 +18,7 @@ cp ./TestListExamples.java ./tests
 
 cd tests
 # Compile the student's code and test files
-javac -cp $CPATH ./tests/*.java
+javac -cp $CPATH ./*.java
 
 # Check if compilation succeeded
 if [ $? -ne 0 ]; then
