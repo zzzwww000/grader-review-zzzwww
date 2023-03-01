@@ -26,7 +26,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Run the tests using JUnit and report the grade
-java -cp $CPATH org.junit.runner.JUnitCore ./tests/TestListExamples | grep -E > tests_results.txt
+java -cp $CPATH org.junit.runner.JUnitCore ./tests/TestListExamples | grep -E 'Tests run: [0-9]+, Failures: [0-9]+' > tests_results.txt
 if [ $? -eq 0 ]; then
     echo "Congratulations, you passed the tests!"
 else
